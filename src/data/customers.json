@@ -1,0 +1,212 @@
+[
+  {
+    "customerId": "CUST001",
+    "customerName": "Mumpuni Siregar",
+    "email": "daruna38@ud.org",
+    "phone": "0812437628",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST002",
+    "customerName": "Pranawa Rahayu",
+    "email": "purwapermata@ud.net.id",
+    "phone": "0812432511",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST003",
+    "customerName": "Irnanto Hutapea",
+    "email": "cakrabirawa72@gmail.com",
+    "phone": "0812109882",
+    "loyalty": "Silver"
+  },
+  {
+    "customerId": "CUST004",
+    "customerName": "drg. Laras Iswahyudi",
+    "email": "indah78@perum.edu",
+    "phone": "0812147244",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST005",
+    "customerName": "Sutan Danang Saefullah, M.Ak",
+    "email": "sarizulkarnain@pt.net",
+    "phone": "0812495731",
+    "loyalty": "Silver"
+  },
+  {
+    "customerId": "CUST006",
+    "customerName": "Jabal Susanti, S.Gz",
+    "email": "rikapurnawati@yahoo.com",
+    "phone": "0812380196",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST007",
+    "customerName": "Mahmud Simanjuntak",
+    "email": "wijayantisalman@yahoo.com",
+    "phone": "0812898615",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST008",
+    "customerName": "Jamalia Thamrin",
+    "email": "hamzahuyainah@gmail.com",
+    "phone": "0812817601",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST009",
+    "customerName": "drg. Alambana Najmudin",
+    "email": "irsadpuspasari@yahoo.com",
+    "phone": "0812767250",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST010",
+    "customerName": "Elma Mardhiyah",
+    "email": "galiono95@gmail.com",
+    "phone": "0812488464",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST011",
+    "customerName": "Sakura Uyainah",
+    "email": "okuswandari@yahoo.com",
+    "phone": "0812632322",
+    "loyalty": "Silver"
+  },
+  {
+    "customerId": "CUST012",
+    "customerName": "Mulyanto Sirait, S.Gz",
+    "email": "novahutasoit@perum.id",
+    "phone": "0812370100",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST013",
+    "customerName": "dr. Jessica Gunarto",
+    "email": "ynurdiyanti@perum.biz.id",
+    "phone": "0812300731",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST014",
+    "customerName": "Janet Halim",
+    "email": "ilyaswaluyo@cv.net",
+    "phone": "0812896467",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST015",
+    "customerName": "Endah Sihombing, S.T.",
+    "email": "sadina52@pd.gov",
+    "phone": "0812564007",
+    "loyalty": "Silver"
+  },
+  {
+    "customerId": "CUST016",
+    "customerName": "Ghaliyati Nababan",
+    "email": "kasiran77@cv.or.id",
+    "phone": "0812160311",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST017",
+    "customerName": "Maya Prakasa",
+    "email": "jane28@cv.org",
+    "phone": "0812455937",
+    "loyalty": "Silver"
+  },
+  {
+    "customerId": "CUST018",
+    "customerName": "Tomi Safitri",
+    "email": "jamilputra@perum.go.id",
+    "phone": "0812225508",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST019",
+    "customerName": "Dr. Nova Napitupulu, S.Pt",
+    "email": "garansuryatmi@pt.desa.id",
+    "phone": "0812926365",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST020",
+    "customerName": "Puti Cinta Hariyah, S.Ked",
+    "email": "cagaksimanjuntak@cv.com",
+    "phone": "0812545487",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST021",
+    "customerName": "Azalea Pertiwi",
+    "email": "karmanhardiansyah@pd.net",
+    "phone": "0812970358",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST022",
+    "customerName": "dr. Victoria Hastuti",
+    "email": "kembawidodo@pd.ponpes.id",
+    "phone": "0812901921",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST023",
+    "customerName": "drg. Luis Pratama, M.Farm",
+    "email": "wwasita@yahoo.com",
+    "phone": "0812358732",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST024",
+    "customerName": "Intan Waskita, S.T.",
+    "email": "jabaldongoran@gmail.com",
+    "phone": "0812218871",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST025",
+    "customerName": "dr. Tira Ardianto, M.Ak",
+    "email": "mardhiyahkamal@cv.my.id",
+    "phone": "0812624619",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST026",
+    "customerName": "Jabal Hartati",
+    "email": "rkuswoyo@cv.mil.id",
+    "phone": "0812656585",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST027",
+    "customerName": "KH. Reksa Latupono, S.Farm",
+    "email": "munikuswoyo@gmail.com",
+    "phone": "0812520234",
+    "loyalty": "Bronze"
+  },
+  {
+    "customerId": "CUST028",
+    "customerName": "Martana Permadi",
+    "email": "estiawanhalimah@cv.sch.id",
+    "phone": "0812430291",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST029",
+    "customerName": "Damar Situmorang",
+    "email": "nasyidahparman@pt.ponpes.id",
+    "phone": "0812291466",
+    "loyalty": "Gold"
+  },
+  {
+    "customerId": "CUST030",
+    "customerName": "Cut Azalea Widiastuti, M.M.",
+    "email": "wyulianti@yahoo.com",
+    "phone": "0812883814",
+    "loyalty": "Bronze"
+  }
+]
