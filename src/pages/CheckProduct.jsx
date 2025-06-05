@@ -14,7 +14,7 @@ export default function CheckProduct() {
     e.preventDefault();
 
     if (kode.trim() === "") {
-      setMessage("Kode produk tidak boleh kosong.");
+      setMessage("Kode produk tidak boleh kosong");
       setProduct(null);
       return;
     }
