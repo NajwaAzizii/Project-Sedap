@@ -1,3 +1,4 @@
+import { MdOutlineFoodBank } from "react-icons/md"; 
 import { BiUser } from "react-icons/bi"; 
 import { BiMessageRoundedError } from "react-icons/bi"; 
 import { BiErrorAlt } from "react-icons/bi"; 
@@ -52,6 +53,15 @@ export default function SidebarMenu() {
         >
          <BiUser className="mr-4 text-x" />
           <span>User</span>
+        </NavLink>
+      </li>
+       <li>
+        <NavLink
+          id="menu-8" to="/products"
+          className={menuClass}
+        >
+         <MdOutlineFoodBank className="mr-4 text-x" />
+          <span>Products</span>
         </NavLink>
       </li>
       <li>
