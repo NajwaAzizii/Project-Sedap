@@ -1,9 +1,11 @@
+import { BiEditAlt } from "react-icons/bi"; 
 import { notesAPI } from "../services/notesAPI";
 import { useState, useEffect } from "react";
 import AlertBox from "../components/AlertBox";
 import GenericTable from "../components/GenericTable";
 import { AiFillDelete } from "react-icons/ai";
-
+import LoadingSpinner from "../components/LoadingSpinner";
+import EmptyState from "../components/EmptyState";
 
 export default function Notes() {
   const [loading, setLoading] = useState(false);
@@ -16,6 +18,7 @@ export default function Notes() {
     status: "",
   });
 
+  const [editingNoteId, setEditingNoteId] = useState(null);
   const [notes, setNotes] = useState([]);
 
   // Handle perubahan nilai input form
@@ -54,26 +57,64 @@ export default function Notes() {
     }
   };
 
-    // Handle untuk aksi hapus data
-    const handleDelete = async (id) => {
-        const konfirmasi = confirm("Yakin ingin menghapus catatan ini?")
-        if (!konfirmasi) return
+  // Handle untuk aksi hapus data
+  const handleDelete = async (id) => {
+    const konfirmasi = confirm("Yakin ingin menghapus catatan ini?");
+    if (!konfirmasi) return;
 
-        try {
-            setLoading(true)
-            setError("")
-            setSuccess("")
+    try {
+      setLoading(true);
+      setError("");
+      setSuccess("");
 
-            await notesAPI.deleteNote(id)
+      await notesAPI.deleteNote(id);
 
-            // Refresh data
-            loadNotes()
-        } catch (err) {
-            setError(`Terjadi kesalahan: ${err.message}`)
-        } finally {
-            setLoading(false)
-        }
+      // Refresh data
+      loadNotes();
+    } catch (err) {
+      setError(`Terjadi kesalahan: ${err.message}`);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const handleEditClick = (note) => {
+    setEditingNoteId(note.id);
+    setDataForm({
+      title: note.title,
+      content: note.content,
+      status: note.status || "",
+    });
+    setSuccess("");
+    setError("");
+  };
+
+  const handleCancelEdit = () => {
+    setEditingNoteId(null);
+    setDataForm({ title: "", content: "", status: "" });
+  };
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+      setError("");
+      setSuccess("");
+
+      await notesAPI.updateNote(editingNoteId, dataForm);
+
+      setSuccess("Catatan berhasil diperbarui!");
+      setEditingNoteId(null);
+      setDataForm({ title: "", content: "", status: "" });
+      setTimeout(() => setSuccess(""), 3000);
+      loadNotes();
+    } catch (err) {
+      setError(`Terjadi kesalahan: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Load data saat pertama di-render
   useEffect(() => {
@@ -110,7 +151,10 @@ export default function Notes() {
 
         {success && <AlertBox type="success">{success}</AlertBox>}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          onSubmit={editingNoteId ? handleUpdate : handleSubmit}
+          className="space-y-4"
+        >
           <input
             type="text"
             name="title"
@@ -147,17 +191,37 @@ export default function Notes() {
             Tambah Catatan
             {loading ? "Mohon Tunggu..." : "Tambah Data"}
           </button>
+
+          {editingNoteId && (
+            <button
+              type="button"
+              onClick={handleCancelEdit}
+              className="ml-4 px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold rounded-2xl transition-all duration-200"
+            >
+              Batal Edit
+            </button>
+          )}
         </form>
-        
       </div>
       {/* Notes Table */}
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden mt-10">
-          <div className="px-6 py-4 ">
-            <h3 className="text-lg font-semibold">
-              Daftar Catatan ({notes.length})
-            </h3>
-          </div>
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden mt-10">
+        <div className="px-6 py-4 ">
+          <h3 className="text-lg font-semibold">
+            Daftar Catatan ({notes.length})
+          </h3>
+        </div>
 
+        {loading && <LoadingSpinner text="Memuat catatan..." />}
+
+        {!loading && notes.length === 0 && !error && (
+          <EmptyState text="Belum ada catatan. Tambah catatan pertama!" />
+        )}
+
+        {!loading && notes.length === 0 && error && (
+          <EmptyState text="Terjadi Kesalahan. Coba lagi nanti." />
+        )}
+
+        {!loading && notes.length > 0 ? (
           <GenericTable
             columns={["#", "Judul", "Isi Catatan", "Aksi"]} //Tambah Kolom baru
             data={notes}
@@ -174,8 +238,17 @@ export default function Notes() {
                 <td className="px-6 py-4 max-w-xs">
                   <div className="truncate text-gray-600">{note.content}</div>
                 </td>
+                
+
                 <td className="px-6 py-4 max-w-xs">
                   <div className="truncate text-gray-600">
+                    <button
+                      onClick={() => handleEditClick(note)}
+                      disabled={loading}
+                    >
+                      <BiEditAlt className="text-green-400 text-2xl hover:text-green-600 transition-colors" />
+                    </button>
+
                     <button
                       onClick={() => handleDelete(note.id)}
                       disabled={loading}
@@ -187,7 +260,8 @@ export default function Notes() {
               </>
             )}
           />
-        </div>
+        ) : null}
+      </div>
     </div>
   );
 }
