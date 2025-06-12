@@ -64,6 +64,17 @@ export default function SidebarMenu() {
           <span>Products</span>
         </NavLink>
       </li>
+
+       <li>
+        <NavLink
+          id="menu-9" to="/notes"
+          className={menuClass}
+        >
+         <BiUser className="mr-4 text-x" />
+          <span>Notes</span>
+        </NavLink>
+      </li>
+
       <li>
         <NavLink
           id="menu-4" to="/error/400"
